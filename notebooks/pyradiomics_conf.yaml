@@ -1,0 +1,19 @@
+setting:
+  label: 1  # Label for ChP in segmentation mask
+  binWidth: 25
+  resampledPixelSpacing: [1, 1, 1]
+  interpolator: 'sitkBSpline'
+  correctMask: True
+  weightingNorm:
+  normalize:
+  additionalInfo: False
+
+featureClass:
+  shape:
+  firstorder:
+  glcm:
+  glrlm:
+  glszm:
+  gldm:
+  # ngtdm:
+

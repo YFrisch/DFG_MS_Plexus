@@ -1,0 +1,17 @@
+numpy<2.0
+click
+keyboard
+pandas
+pandas-stubs
+matplotlib
+seaborn
+openpyxl
+scikit-learn
+imblearn
+
+xgboost
+lightgbm
+catboost
+pytorch-tabnet
+
+pyradiomics
