@@ -26,13 +26,41 @@ This project therefore combines:
 
 #### (Pre)processing
 
-* You can normalize MRIs following FreeSurfer with `python scripts/convert_freesurfer.py`
-* You can extract cropped Regions of Interest (RoIs) around the ChPs with `python scripts/crop_mris.py`
-* You can extract CNN features from RoIs with `python scripts/extract_cnn_features.py`
+* You can normalize MRIs following FreeSurfer with
+
+    ```
+    python scripts/convert_freesurfer.py \
+        --source_dir <...> \
+        --output_dir <...> \
+        --tmp_dir <...>
+    ```
+  
+* You can extract cropped Regions of Interest (RoIs) around the ChPs with 
+
+    ```
+    python scripts/crop_mris.py \
+        --source_img_dir <...> \
+        --source_mask_dir <...> \
+        --output_img_dir <...> \
+        --output_mask_dir <...> \
+        --target_size <...>
+    ```
 
 #### Splits
 
-Create reusable and consistent patient-wise train/test splits with `python scripts/make_splits.py`
+Create reusable and consistent patient-wise train/test splits with
+
+```
+python scripts/make_splits.py \
+    --root <...> \
+    --target <...> \
+    --fts_file <...> \
+    --train_file <...> \
+    --test_file <...> \
+    --test_split_size <...> \
+    --random_seed <...> \
+    --cv_seeds <...>
+```
 
 #### Training nnUNet for ChP Segmentation
 
@@ -48,8 +76,16 @@ Then evaluate against the ground truth using `python scripts/eval_nnunet.py`
 
 #### PyRadiomics Feature Extraction 
 
-* `notebooks/extract___pyradiomics_features.ipynb` implements the extraction of PyRadiomics features from segmented ChPs.
-* `notebooks/analyse___pyradiomics_features.ipynb` implements feature pre-processing and analysis examples.
+Extract PyRadiomics features from segmented ChPs with
+```
+python scripts/extract_radiomics_features.py \
+    --img_dir <...> \
+    --mask_dir <...> \
+    --pyradiomics_conf <...> \
+    --target_filename <...>
+```
+
+`notebooks/analyse___pyradiomics_features.ipynb` implements feature pre-processing and analysis examples.
 
 #### MS Classifier Training
 
@@ -61,7 +97,7 @@ The notebook `notebooks/train___cnn_clf.ipynb` specifically trains a CNN classif
 
 #### Combining PyRadiomics and CNN features for Classification
 
-`notebooks/eval___late_fusion.ipynb`
+`notebooks/eval___late_fusion___*.ipynb`
 
 ## License
 
