@@ -62,7 +62,7 @@ python scripts/make_splits.py \
     --cv_seeds <...>
 ```
 
-#### Training nnUNet for ChP Segmentation
+#### Training nnU-Net for ChP Segmentation
 
 Please follow the process described [here](https://github.com/MIC-DKFZ/nnUNet) to prepare your dataset for training nnU-Net.
 
@@ -120,6 +120,10 @@ The notebook `notebooks/train___cnn_clf.ipynb` specifically trains a CNN classif
 | MLP + CNN (Late Fusion) | 0.830 ± 0.039 | 0.742 ± 0.101 | 0.712 ± 0.080 | 0.718 ± 0.085 |
 
 Values are reported as mean ± standard deviation across five random seeds. Italic values indicate the best feature-based scores and bold values the best overall scores per metric.
+
+![image](assets/late_fusion_alpha.png)
+
+Combining both model families with Late Fusion effectively fuses the feature-based models' sharper, more polarized probabilites with the CNN's softer distributions. This mechanism yields our strongest predictor with an F1-score of **0.741 ± 0.044** in the case of XGBoost + CNN, demonstrating an absolute increase of roughly **10%** over the CNN and **17%** over XGBoost alone.
 
 ## License
 
