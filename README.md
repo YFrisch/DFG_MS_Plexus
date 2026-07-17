@@ -17,9 +17,9 @@ This project therefore combines:
 
 ## Quick Start
 
-1. Create and activate a Python environment of your choice.
-2. Install nnUNet from [here](https://github.com/MIC-DKFZ/nnUNet).
-3. Install the required packages via `pip install -r requirements.txt`
+1. Create and activate a Python environment of your choice with Python 3.10 or newer.
+2. Install nnUNet from [here](https://github.com/MIC-DKFZ/nnUNet) if segmentation training or inference is needed.
+3. Install the pinned project requirements via `pip install -r requirements.txt`
 4. Install the local package via `pip install -e .`
 
 ## Usage

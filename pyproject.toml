@@ -4,8 +4,57 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dfg_ms_plexus"
-version = "2025.0.1"
+version = "2026.1.0"
 requires-python = ">= 3.10"
+dependencies = [
+    "click",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "seaborn"
+]
+
+[project.optional-dependencies]
+imaging = [
+    "nibabel",
+    "SimpleITK",
+    "pyradiomics",
+    "scipy",
+    "natsort",
+    "tqdm",
+    "torchio",
+    "opencv-python",
+]
+ml = [
+    "imbalanced-learn",
+    "xgboost",
+    "lightgbm",
+    "catboost",
+    "pytorch-tabnet",
+]
+deep-learning = [
+    "torch",
+    "torchvision",
+    "torchmetrics",
+]
+notebooks = [
+    "ipykernel",
+    "jupyter",
+    "openpyxl",
+    "statsmodels",
+    "skops",
+    "shap",
+    "plotly",
+    "tabpfn",
+    "huggingface-hub",
+]
+dev = [
+    "pip-tools",
+]
+all = [
+    "dfg_ms_plexus[imaging,ml,deep-learning,notebooks]",
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
