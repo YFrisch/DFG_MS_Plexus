@@ -99,6 +99,28 @@ The notebook `notebooks/train___cnn_clf.ipynb` specifically trains a CNN classif
 
 `notebooks/eval___late_fusion___*.ipynb`
 
+#### Results
+
+| Model | Accuracy | Macro Precision | Macro Recall | Macro F1 |
+|---|---:|---:|---:|---:|
+| Balanced Bagging | 0.678 ± 0.023 | 0.486 ± 0.020 | 0.533 ± 0.018 | 0.506 ± 0.017 |
+| Balanced Random Forest | 0.609 ± 0.032 | 0.493 ± 0.023 | 0.519 ± 0.022 | 0.501 ± 0.024 |
+| CatBoost | 0.630 ± 0.036 | 0.527 ± 0.051 | 0.565 ± 0.056 | 0.536 ± 0.053 |
+| LightGBM | 0.672 ± 0.028 | 0.552 ± 0.065 | 0.545 ± 0.031 | 0.545 ± 0.047 |
+| XGBoost | 0.678 ± 0.008 | 0.547 ± 0.022 | _0.575 ± 0.010_ | _0.556 ± 0.018_ |
+| Logistic Regression | 0.564 ± 0.031 | _0.568 ± 0.006_ | 0.532 ± 0.017 | 0.530 ± 0.015 |
+| MLP | _0.684 ± 0.039_ | 0.560 ± 0.042 | 0.544 ± 0.023 | 0.547 ± 0.026 |
+| TabNet | 0.654 ± 0.074 | 0.545 ± 0.077 | 0.542 ± 0.073 | 0.539 ± 0.072 |
+| TabPFN | 0.561 ± 0.174 | 0.524 ± 0.020 | 0.536 ± 0.024 | 0.484 ± 0.068 |
+||
+| CNN (ChP RoI) | 0.800 ± 0.039 | 0.675 ± 0.050 | 0.646 ± 0.084 | 0.647 ± 0.061 |
+||
+| LightGBM + CNN (Late Fusion) | **0.866 ± 0.038** | **0.857 ± 0.093** | 0.726 ± 0.053 | 0.745 ± 0.058 |
+| XGBoost + CNN (Late Fusion) | 0.848 ± 0.045 | 0.787 ± 0.057 | **0.741 ± 0.044** | **0.749 ± 0.051** |
+| MLP + CNN (Late Fusion) | 0.830 ± 0.039 | 0.742 ± 0.101 | 0.712 ± 0.080 | 0.718 ± 0.085 |
+
+Values are reported as mean ± standard deviation across five random seeds. Italic values indicate the best feature-based scores and bold values the best overall scores per metric.
+
 ## License
 
 This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for details.
