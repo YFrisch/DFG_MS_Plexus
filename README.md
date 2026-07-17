@@ -87,15 +87,15 @@ python scripts/extract_radiomics_features.py \
 
 `notebooks/analyse___pyradiomics_features.ipynb` implements feature pre-processing and analysis examples.
 
-#### MS Classifier Training
+#### Feature-Based MS Classifier Training
 
-The `notebooks/train___*.ipynb` notebooks implement different classifiers to predict MS from PyRadiomics features.
+The `notebooks/train___*.ipynb` notebooks implement different classifiers to predict MS from PyRadiomics features and ALPS imaging metrics.
 
-#### CNN Classifier Training
+#### CNN MS Classifier Training
 
-The notebook `notebooks/train___cnn_clf.ipynb` specifically trains a CNN classifier on extracted RoIs.
+The notebook `notebooks/train___cnn_clf.ipynb` specifically trains a CNN classifier on extracted RoIs around the ChP.
 
-#### Combining PyRadiomics and CNN features for Classification
+#### Combining CNN and Feature-Based Classifiers with Late Fusion
 
 `notebooks/eval___late_fusion___*.ipynb`
 
