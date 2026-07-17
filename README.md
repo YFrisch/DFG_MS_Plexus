@@ -123,7 +123,7 @@ Values are reported as mean ± standard deviation across five random seeds. Ital
 
 ![image](assets/late_fusion_alpha.png)
 
-Combining both model families with Late Fusion effectively fuses the feature-based models' sharper, more polarized probabilites with the CNN's softer distributions. This mechanism yields our strongest predictor with an F1-score of **0.741 ± 0.044** in the case of XGBoost + CNN, demonstrating an absolute increase of roughly **10%** over the CNN and **17%** over XGBoost alone.
+Combining both model families with Late Fusion effectively fuses the feature-based models' sharper, more polarized probabilites with the CNN's softer distributions. This mechanism yields our strongest predictor with an F1-score of **0.741 ± 0.044** in the case of XGBoost + CNN, demonstrating an absolute increase of roughly **10%** over the CNN and **19%** over XGBoost alone.
 
 ## License
 
